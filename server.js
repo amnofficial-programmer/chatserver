@@ -13,6 +13,9 @@ const {
   getRoomUsers
 } = require('./utils/users');
 
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
 
 const io = socketio(server,{
     cors: {
