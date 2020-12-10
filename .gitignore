@@ -1,0 +1,40 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Visual Studio ###
+
+/node_modules
+node_modules
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/logs
+# /*.out
+/ReleaseNotes.html
+/ReleaseNotes.pdf
+/output
+**/pom.xml.versionsBackup
+**/target
+/report/ccnet
+**/maven.out
+/report
+
+### Powershell ###
+/**/*.log
+
+### Jacoco coverage Report ###
+/**/*.mdmp
+
+### Backup files
+**/*.bak
