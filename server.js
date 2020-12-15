@@ -8,6 +8,7 @@ const socketio = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 var bodyParser = require('body-parser')
+var constants = require('./constant/constants');
 
 // create application/json parser
 var jsonParser = bodyParser.json()
@@ -49,7 +50,7 @@ app.use((req,res,next) => {
 })
 
 var corsOptions = {
-  origin: "http://localhost:4200",
+  origin: '*',
   methods: ["GET", "POST","HEAD","PUT","PATCH","DELETE"],
   allowedHeaders: ["my-custom-header","Authorization","Content-Type"],
   credentials: true
@@ -91,7 +92,7 @@ app.post('/chatserver/getHistoricalChats',cors(corsOptions), jsonParser,function
 
 const io = socketio(server,{
     cors: {
-      origin: "http://localhost:4200",
+      origin: '*',
       methods: ["GET", "POST","HEAD","PUT","PATCH","DELETE"],
       allowedHeaders: ["my-custom-header","Authorization","Content-Type"],
       credentials: true
