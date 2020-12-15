@@ -1,11 +1,11 @@
 const { months } = require('moment')
 const moment = require('moment')
 
-function formatMessage(from, to, text){
+function formatMessage(from_id, to_id, text){
 
     return{ 
-        from,
-        to,
+        from_id,
+        to_id,
         text,
         time: moment().format('dd/mm/yy h:mm a')
     }
