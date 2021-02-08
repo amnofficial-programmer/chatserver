@@ -13,7 +13,7 @@ const moment = require('moment')
 var mysql = require('mysql');
 var pool  = mysql.createPool({
   connectionLimit : 10,
-  host     : 'jdbc:mysql://localhost:3306/',
+  host     : 'jdbc:mysql://127.0.0.1',
   port     : '3306', 
   user     : 'root',
   password : 'RootLogin#1212@#$',
