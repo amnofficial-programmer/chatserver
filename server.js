@@ -1,12 +1,20 @@
 // Setup basic express server
 
 const path = require('path');
-const http = require('http');
+const https = require('https');
 const express = require('express');
 var cors = require('cors')
 const socketio = require('socket.io');
 const app = express();
-const server = http.createServer(app);
+var fs = require('fs');
+
+
+var options = {
+  cert: fs.readFileSync('./ssl/tier1jobs_in.crt'),
+  key: fs.readFileSync('./ssl/tie1jobs_privkey.key')
+};
+
+const server = https.createServer(options,app);
 var bodyParser = require('body-parser')
 var constants = require('./constant/constants');
 
@@ -96,7 +104,9 @@ const io = socketio(server,{
       methods: ["GET", "POST","HEAD","PUT","PATCH","DELETE"],
       allowedHeaders: ["my-custom-header","Authorization","Content-Type"],
       credentials: true
-    }
+    },
+    cert: fs.readFileSync('./ssl/tier1jobs_in.crt'),
+    key: fs.readFileSync('./ssl/tie1jobs_privkey.key')
 });
 const port = process.env.PORT || 3000;
 
